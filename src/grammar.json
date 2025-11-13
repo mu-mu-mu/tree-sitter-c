@@ -6613,6 +6613,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "statement_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "call_expression"
         },
         {
@@ -7983,6 +7987,27 @@
               "type": "SYMBOL",
               "name": "argument_list"
             }
+          }
+        ]
+      }
+    },
+    "statement_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "SYMBOL",
+            "name": "compound_statement"
+          },
+          {
+            "type": "STRING",
+            "value": ")"
           }
         ]
       }

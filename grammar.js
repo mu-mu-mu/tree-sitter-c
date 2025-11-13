@@ -960,6 +960,7 @@ module.exports = grammar({
       $.offsetof_expression,
       $.generic_expression,
       $.subscript_expression,
+      $.statement_expression,
       $.call_expression,
       $.field_expression,
       $.compound_literal_expression,
@@ -1123,6 +1124,13 @@ module.exports = grammar({
     call_expression: $ => prec(PREC.CALL, seq(
       field('function', $.expression),
       field('arguments', $.argument_list),
+    )),
+
+    statement_expression: $ =>
+    prec(PREC.CALL, seq(
+      '(',
+      $.compound_statement,
+      ')'
     )),
 
     gnu_asm_expression: $ => prec(PREC.CALL, seq(
