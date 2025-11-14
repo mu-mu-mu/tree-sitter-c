@@ -132,6 +132,18 @@
         "named": true
       },
       {
+        "type": "builtin_offsetof_expression",
+        "named": true
+      },
+      {
+        "type": "builtin_types_compatible_p_expression",
+        "named": true
+      },
+      {
+        "type": "builtin_va_arg_expression",
+        "named": true
+      },
+      {
         "type": "call_expression",
         "named": true
       },
@@ -893,6 +905,84 @@
     "type": "break_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "builtin_offsetof_expression",
+    "named": true,
+    "fields": {
+      "member": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "offsetof_member_designator",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_descriptor",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "builtin_types_compatible_p_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_descriptor",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_descriptor",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "builtin_va_arg_expression",
+    "named": true,
+    "fields": {
+      "ap": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_descriptor",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "call_expression",
@@ -2452,6 +2542,21 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "offsetof_member_designator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -4280,6 +4385,18 @@
   },
   {
     "type": "__based",
+    "named": false
+  },
+  {
+    "type": "__builtin_offsetof",
+    "named": false
+  },
+  {
+    "type": "__builtin_types_compatible_p",
+    "named": false
+  },
+  {
+    "type": "__builtin_va_arg",
     "named": false
   },
   {

@@ -963,6 +963,9 @@ module.exports = grammar({
       $.statement_expression,
       $.call_expression,
       $.field_expression,
+      $.builtin_offsetof_expression,
+      $.builtin_types_compatible_p_expression,
+      $.builtin_va_arg_expression,
       $.compound_literal_expression,
       $.identifier,
       $.number_literal,
@@ -1113,6 +1116,47 @@ module.exports = grammar({
       commaSep1(seq($.type_descriptor, ':', $.expression)),
       ')',
     )),
+
+    offsetof_member_designator: $ =>
+      seq(
+        $.identifier,
+        repeat(
+          choice(
+            seq('.', $.identifier),
+            seq('[', $.expression, ']')
+          )
+        )
+      ),
+
+    builtin_offsetof_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_offsetof',
+        '(',
+        field('type', $.type_descriptor),
+        ',',
+        field('member', $.offsetof_member_designator),
+        ')'
+      )),
+
+    builtin_types_compatible_p_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_types_compatible_p',
+        '(',
+        field('left', $.type_descriptor),
+        ',',
+        field('right', $.type_descriptor),
+        ')'
+      )),
+
+    builtin_va_arg_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_va_arg',
+        '(',
+        field('ap', $.expression),
+        ',',
+        field('type', $.type_descriptor),
+        ')'
+      )),
 
     subscript_expression: $ => prec(PREC.SUBSCRIPT, seq(
       field('argument', $.expression),
