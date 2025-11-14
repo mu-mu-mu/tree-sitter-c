@@ -8184,8 +8184,12 @@
             "value": "("
           },
           {
-            "type": "SYMBOL",
-            "name": "compound_statement"
+            "type": "FIELD",
+            "name": "compound",
+            "content": {
+              "type": "SYMBOL",
+              "name": "compound_statement"
+            }
           },
           {
             "type": "STRING",

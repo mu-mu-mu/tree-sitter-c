@@ -1173,7 +1173,7 @@ module.exports = grammar({
     statement_expression: $ =>
     prec(PREC.CALL, seq(
       '(',
-      $.compound_statement,
+      field('compound', $.compound_statement),
       ')'
     )),
 

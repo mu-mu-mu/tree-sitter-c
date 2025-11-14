@@ -3576,16 +3576,17 @@
   {
     "type": "statement_expression",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "compound_statement",
-          "named": true
-        }
-      ]
+    "fields": {
+      "compound": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "compound_statement",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
