@@ -1119,11 +1119,11 @@ module.exports = grammar({
 
     offsetof_member_designator: $ =>
       seq(
-        $.identifier,
+        field('last', $.identifier),
         repeat(
           choice(
-            seq('.', $.identifier),
-            seq('[', $.expression, ']')
+            field('recordmember', seq('.', $.identifier)),
+            field('arraymember', seq('[', $.expression, ']'))
           )
         )
       ),
