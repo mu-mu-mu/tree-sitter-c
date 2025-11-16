@@ -340,6 +340,10 @@
         "named": true
       },
       {
+        "type": "typeof_specifier",
+        "named": true
+      },
+      {
         "type": "union_specifier",
         "named": true
       }
@@ -3983,6 +3987,32 @@
     }
   },
   {
+    "type": "typeof_specifier",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_descriptor",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "unary_expression",
     "named": true,
     "fields": {
@@ -4498,6 +4528,14 @@
     "named": false
   },
   {
+    "type": "__typeof",
+    "named": false
+  },
+  {
+    "type": "__typeof__",
+    "named": false
+  },
+  {
     "type": "__unaligned",
     "named": false
   },
@@ -4724,6 +4762,10 @@
   },
   {
     "type": "typedef",
+    "named": false
+  },
+  {
+    "type": "typeof",
     "named": false
   },
   {

@@ -595,6 +595,16 @@ module.exports = grammar({
       $.sized_type_specifier,
       $.primitive_type,
       $._type_identifier,
+      $.typeof_specifier,
+    ),
+
+    typeof_specifier: $ => seq(
+      choice('typeof', '__typeof', '__typeof__'), '(',
+      choice(
+        field('type', $.type_descriptor),
+        field('expression', $.expression),
+      ),
+      ')'
     ),
 
     sized_type_specifier: $ => choice(
