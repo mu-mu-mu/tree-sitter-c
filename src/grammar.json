@@ -6688,6 +6688,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "builtin_constant_p_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "builtin_va_arg_expression"
         },
         {
@@ -8132,6 +8136,35 @@
             "content": {
               "type": "SYMBOL",
               "name": "type_descriptor"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          }
+        ]
+      }
+    },
+    "builtin_constant_p_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "__builtin_constant_p"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "FIELD",
+            "name": "expression",
+            "content": {
+              "type": "SYMBOL",
+              "name": "expression"
             }
           },
           {

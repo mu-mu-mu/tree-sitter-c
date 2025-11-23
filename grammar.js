@@ -975,6 +975,7 @@ module.exports = grammar({
       $.field_expression,
       $.builtin_offsetof_expression,
       $.builtin_types_compatible_p_expression,
+      $.builtin_constant_p_expression,
       $.builtin_va_arg_expression,
       $.compound_literal_expression,
       $.identifier,
@@ -1155,6 +1156,14 @@ module.exports = grammar({
         field('left', $.type_descriptor),
         ',',
         field('right', $.type_descriptor),
+        ')'
+      )),
+
+    builtin_constant_p_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_constant_p',
+        '(',
+        field('expression', $.expression),
         ')'
       )),
 

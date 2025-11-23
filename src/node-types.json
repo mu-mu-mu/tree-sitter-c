@@ -132,6 +132,10 @@
         "named": true
       },
       {
+        "type": "builtin_constant_p_expression",
+        "named": true
+      },
+      {
         "type": "builtin_offsetof_expression",
         "named": true
       },
@@ -909,6 +913,22 @@
     "type": "break_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "builtin_constant_p_expression",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "builtin_offsetof_expression",
@@ -4449,6 +4469,10 @@
   },
   {
     "type": "__based",
+    "named": false
+  },
+  {
+    "type": "__builtin_constant_p",
     "named": false
   },
   {
