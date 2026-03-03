@@ -1239,6 +1239,8 @@ module.exports = grammar({
       'volatile',
       '__volatile__',
       'inline',
+      '__inline',
+      '__inline__',
       'goto',
     ),
 
