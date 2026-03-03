@@ -90,6 +90,7 @@ module.exports = grammar({
       alias($._old_style_function_definition, $.function_definition),
       $.linkage_specification,
       $.declaration,
+      $.static_assert_declaration,
       $._top_level_statement,
       $.attributed_statement,
       $.type_definition,
@@ -107,6 +108,7 @@ module.exports = grammar({
       alias($._old_style_function_definition, $.function_definition),
       $.linkage_specification,
       $.declaration,
+      $.static_assert_declaration,
       $.statement,
       $.attributed_statement,
       $.type_definition,
@@ -263,6 +265,15 @@ module.exports = grammar({
         ),
         $.init_declarator,
       ))),
+      ';',
+    ),
+
+    static_assert_declaration: $ => seq(
+      field('keyword', choice('_Static_assert', '_StaticAssert')),
+      '(',
+      field('condition', $.expression),
+      optional(seq(',', field('message', $._string))),
+      ')',
       ';',
     ),
 
@@ -734,6 +745,7 @@ module.exports = grammar({
 
     _field_declaration_list_item: $ => choice(
       $.field_declaration,
+      $.static_assert_declaration,
       $.preproc_def,
       $.preproc_function_def,
       $.preproc_call,
@@ -875,6 +887,7 @@ module.exports = grammar({
       repeat(choice(
         $._non_case_statement,
         $.declaration,
+        $.static_assert_declaration,
         $.type_definition,
       )),
     )),

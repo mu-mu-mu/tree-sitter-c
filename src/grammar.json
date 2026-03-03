@@ -36,6 +36,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "static_assert_declaration"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_top_level_statement"
         },
         {
@@ -99,6 +103,10 @@
         {
           "type": "SYMBOL",
           "name": "declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "static_assert_declaration"
         },
         {
           "type": "SYMBOL",
@@ -2996,6 +3004,73 @@
         }
       ]
     },
+    "static_assert_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "keyword",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "_Static_assert"
+              },
+              {
+                "type": "STRING",
+                "value": "_StaticAssert"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "expression"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ","
+                },
+                {
+                  "type": "FIELD",
+                  "name": "message",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_string"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
     "type_definition": {
       "type": "SEQ",
       "members": [
@@ -5497,6 +5572,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "static_assert_declaration"
+        },
+        {
+          "type": "SYMBOL",
           "name": "preproc_def"
         },
         {
@@ -6236,6 +6315,10 @@
                 {
                   "type": "SYMBOL",
                   "name": "declaration"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "static_assert_declaration"
                 },
                 {
                   "type": "SYMBOL",

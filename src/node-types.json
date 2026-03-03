@@ -1110,6 +1110,10 @@
           "named": true
         },
         {
+          "type": "static_assert_declaration",
+          "named": true
+        },
+        {
           "type": "switch_statement",
           "named": true
         },
@@ -1271,6 +1275,10 @@
         },
         {
           "type": "statement",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         },
         {
@@ -1478,6 +1486,10 @@
         },
         {
           "type": "statement",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         },
         {
@@ -1751,6 +1763,10 @@
         },
         {
           "type": "preproc_ifdef",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         }
       ]
@@ -3006,6 +3022,10 @@
           "named": true
         },
         {
+          "type": "static_assert_declaration",
+          "named": true
+        },
+        {
           "type": "type_definition",
           "named": true
         },
@@ -3102,6 +3122,10 @@
           "named": true
         },
         {
+          "type": "static_assert_declaration",
+          "named": true
+        },
+        {
           "type": "type_definition",
           "named": true
         },
@@ -3166,6 +3190,10 @@
         },
         {
           "type": "statement",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         },
         {
@@ -3329,6 +3357,10 @@
           "named": true
         },
         {
+          "type": "static_assert_declaration",
+          "named": true
+        },
+        {
           "type": "type_definition",
           "named": true
         },
@@ -3422,6 +3454,10 @@
         },
         {
           "type": "statement",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         },
         {
@@ -3640,6 +3676,50 @@
         "types": [
           {
             "type": "compound_statement",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "static_assert_declaration",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_StaticAssert",
+            "named": false
+          },
+          {
+            "type": "_Static_assert",
+            "named": false
+          }
+        ]
+      },
+      "message": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "concatenated_string",
+            "named": true
+          },
+          {
+            "type": "string_literal",
             "named": true
           }
         ]
@@ -3894,6 +3974,10 @@
         },
         {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "static_assert_declaration",
           "named": true
         },
         {
@@ -4441,6 +4525,14 @@
   },
   {
     "type": "_Noreturn",
+    "named": false
+  },
+  {
+    "type": "_StaticAssert",
+    "named": false
+  },
+  {
+    "type": "_Static_assert",
     "named": false
   },
   {
