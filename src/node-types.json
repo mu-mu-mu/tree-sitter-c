@@ -1369,6 +1369,10 @@
             "named": true
           },
           {
+            "type": "attribute_specifier",
+            "named": true
+          },
+          {
             "type": "attributed_declarator",
             "named": true
           },
@@ -2329,6 +2333,20 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute_specifier",
+          "named": true
+        },
+        {
+          "type": "gnu_asm_expression",
+          "named": true
+        }
+      ]
     }
   },
   {

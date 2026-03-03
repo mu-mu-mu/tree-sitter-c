@@ -49,6 +49,7 @@ module.exports = grammar({
     [$.type_specifier, $._old_style_parameter_list],
     [$.parameter_list, $._old_style_parameter_list],
     [$.function_declarator, $._function_declaration_declarator],
+    [$._declarator, $._declaration_declarator],
     [$._block_item, $.statement],
     [$._top_level_item, $._top_level_statement],
     [$.type_specifier, $._top_level_expression_statement],
@@ -261,6 +262,7 @@ module.exports = grammar({
         seq(
           optional($.ms_call_modifier),
           $._declaration_declarator,
+          repeat($.attribute_specifier),
           optional($.gnu_asm_expression),
         ),
         $.init_declarator,
@@ -554,6 +556,8 @@ module.exports = grammar({
 
     init_declarator: $ => seq(
       field('declarator', $._declarator),
+      repeat($.attribute_specifier),
+      optional($.gnu_asm_expression),
       '=',
       field('value', choice($.initializer_list, $.expression)),
     ),

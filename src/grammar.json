@@ -2918,6 +2918,13 @@
                         "name": "_declaration_declarator"
                       },
                       {
+                        "type": "REPEAT",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "attribute_specifier"
+                        }
+                      },
+                      {
                         "type": "CHOICE",
                         "members": [
                           {
@@ -2971,6 +2978,13 @@
                             {
                               "type": "SYMBOL",
                               "name": "_declaration_declarator"
+                            },
+                            {
+                              "type": "REPEAT",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "attribute_specifier"
+                              }
                             },
                             {
                               "type": "CHOICE",
@@ -4623,6 +4637,25 @@
             "type": "SYMBOL",
             "name": "_declarator"
           }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "attribute_specifier"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "gnu_asm_expression"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -10089,6 +10122,10 @@
     [
       "function_declarator",
       "_function_declaration_declarator"
+    ],
+    [
+      "_declarator",
+      "_declaration_declarator"
     ],
     [
       "_block_item",
