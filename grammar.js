@@ -464,6 +464,7 @@ module.exports = grammar({
       '*',
       repeat($.ms_pointer_modifier),
       repeat($.type_qualifier),
+      repeat($.attribute_specifier),
       field('declarator', $._declarator),
     ))),
     pointer_field_declarator: $ => prec.dynamic(1, prec.right(seq(
@@ -471,6 +472,7 @@ module.exports = grammar({
       '*',
       repeat($.ms_pointer_modifier),
       repeat($.type_qualifier),
+      repeat($.attribute_specifier),
       field('declarator', $._field_declarator),
     ))),
     pointer_type_declarator: $ => prec.dynamic(1, prec.right(seq(
@@ -478,11 +480,13 @@ module.exports = grammar({
       '*',
       repeat($.ms_pointer_modifier),
       repeat($.type_qualifier),
+      repeat($.attribute_specifier),
       field('declarator', $._type_declarator),
     ))),
     abstract_pointer_declarator: $ => prec.dynamic(1, prec.right(seq('*',
       repeat($.ms_pointer_modifier),
       repeat($.type_qualifier),
+      repeat($.attribute_specifier),
       field('declarator', optional($._abstract_declarator)),
     ))),
 
