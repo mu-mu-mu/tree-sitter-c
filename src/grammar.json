@@ -6010,8 +6010,17 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "SYMBOL",
-            "name": "attribute_declaration"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "attribute_declaration"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attribute_specifier"
+              }
+            ]
           }
         },
         {

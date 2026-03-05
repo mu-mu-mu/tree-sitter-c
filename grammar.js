@@ -807,7 +807,10 @@ module.exports = grammar({
     // Statements
 
     attributed_statement: $ => seq(
-      repeat1($.attribute_declaration),
+      repeat1(choice(
+        $.attribute_declaration,
+        $.attribute_specifier,
+      )),
       $.statement,
     ),
 
