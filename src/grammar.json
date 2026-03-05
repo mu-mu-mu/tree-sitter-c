@@ -8695,7 +8695,7 @@
           "name": "constraint",
           "content": {
             "type": "SYMBOL",
-            "name": "string_literal"
+            "name": "_string"
           }
         },
         {
@@ -8803,7 +8803,7 @@
           "name": "constraint",
           "content": {
             "type": "SYMBOL",
-            "name": "string_literal"
+            "name": "_string"
           }
         },
         {
