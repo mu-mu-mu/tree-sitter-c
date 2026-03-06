@@ -132,6 +132,10 @@
         "named": true
       },
       {
+        "type": "builtin_choose_expr_expression",
+        "named": true
+      },
+      {
         "type": "builtin_constant_p_expression",
         "named": true
       },
@@ -928,6 +932,42 @@
     "type": "break_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "builtin_choose_expr_expression",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "builtin_constant_p_expression",
@@ -4606,6 +4646,10 @@
   },
   {
     "type": "__based",
+    "named": false
+  },
+  {
+    "type": "__builtin_choose_expr",
     "named": false
   },
   {

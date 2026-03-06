@@ -998,6 +998,7 @@ module.exports = grammar({
       $.call_expression,
       $.field_expression,
       $.builtin_offsetof_expression,
+      $.builtin_choose_expr_expression,
       $.builtin_types_compatible_p_expression,
       $.builtin_constant_p_expression,
       $.builtin_va_arg_expression,
@@ -1170,6 +1171,18 @@ module.exports = grammar({
         field('type', $.type_descriptor),
         ',',
         field('member', $.offsetof_member_designator),
+        ')'
+      )),
+
+    builtin_choose_expr_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_choose_expr',
+        '(',
+        field('condition', $.expression),
+        ',',
+        field('consequence', $.expression),
+        ',',
+        field('alternative', $.expression),
         ')'
       )),
 
