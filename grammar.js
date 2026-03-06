@@ -1000,6 +1000,7 @@ module.exports = grammar({
       $.builtin_offsetof_expression,
       $.builtin_choose_expr_expression,
       $.builtin_unreachable_expression,
+      $.builtin_dynamic_object_size_expression,
       $.builtin_types_compatible_p_expression,
       $.builtin_constant_p_expression,
       $.builtin_va_arg_expression,
@@ -1191,6 +1192,16 @@ module.exports = grammar({
       prec(PREC.CALL, seq(
         '__builtin_unreachable',
         '(',
+        ')'
+      )),
+
+    builtin_dynamic_object_size_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_dynamic_object_size',
+        '(',
+        field('pointer', $.expression),
+        ',',
+        field('type', $.expression),
         ')'
       )),
 

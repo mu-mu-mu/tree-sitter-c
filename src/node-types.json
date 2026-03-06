@@ -140,11 +140,19 @@
         "named": true
       },
       {
+        "type": "builtin_dynamic_object_size_expression",
+        "named": true
+      },
+      {
         "type": "builtin_offsetof_expression",
         "named": true
       },
       {
         "type": "builtin_types_compatible_p_expression",
+        "named": true
+      },
+      {
+        "type": "builtin_unreachable_expression",
         "named": true
       },
       {
@@ -986,6 +994,32 @@
     }
   },
   {
+    "type": "builtin_dynamic_object_size_expression",
+    "named": true,
+    "fields": {
+      "pointer": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "builtin_offsetof_expression",
     "named": true,
     "fields": {
@@ -1036,6 +1070,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "builtin_unreachable_expression",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "builtin_va_arg_expression",
@@ -4657,11 +4696,19 @@
     "named": false
   },
   {
+    "type": "__builtin_dynamic_object_size",
+    "named": false
+  },
+  {
     "type": "__builtin_offsetof",
     "named": false
   },
   {
     "type": "__builtin_types_compatible_p",
+    "named": false
+  },
+  {
+    "type": "__builtin_unreachable",
     "named": false
   },
   {

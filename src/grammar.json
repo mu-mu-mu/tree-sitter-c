@@ -6845,6 +6845,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "builtin_unreachable_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "builtin_dynamic_object_size_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "builtin_types_compatible_p_expression"
         },
         {
@@ -8306,6 +8314,68 @@
           {
             "type": "FIELD",
             "name": "alternative",
+            "content": {
+              "type": "SYMBOL",
+              "name": "expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          }
+        ]
+      }
+    },
+    "builtin_unreachable_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "__builtin_unreachable"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          }
+        ]
+      }
+    },
+    "builtin_dynamic_object_size_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "__builtin_dynamic_object_size"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "FIELD",
+            "name": "pointer",
+            "content": {
+              "type": "SYMBOL",
+              "name": "expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ","
+          },
+          {
+            "type": "FIELD",
+            "name": "type",
             "content": {
               "type": "SYMBOL",
               "name": "expression"
