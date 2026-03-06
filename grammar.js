@@ -999,6 +999,7 @@ module.exports = grammar({
       $.field_expression,
       $.builtin_offsetof_expression,
       $.builtin_choose_expr_expression,
+      $.builtin_unreachable_expression,
       $.builtin_types_compatible_p_expression,
       $.builtin_constant_p_expression,
       $.builtin_va_arg_expression,
@@ -1183,6 +1184,13 @@ module.exports = grammar({
         field('consequence', $.expression),
         ',',
         field('alternative', $.expression),
+        ')'
+      )),
+
+    builtin_unreachable_expression: $ =>
+      prec(PREC.CALL, seq(
+        '__builtin_unreachable',
+        '(',
         ')'
       )),
 
