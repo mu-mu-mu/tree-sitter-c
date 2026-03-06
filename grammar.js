@@ -811,7 +811,7 @@ module.exports = grammar({
         $.attribute_declaration,
         $.attribute_specifier,
       )),
-      $.statement,
+      field('statement', $.statement),
     ),
 
     statement: $ => choice(

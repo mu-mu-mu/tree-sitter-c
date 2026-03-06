@@ -770,7 +770,18 @@
   {
     "type": "attributed_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "statement": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "statement",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -781,10 +792,6 @@
         },
         {
           "type": "attribute_specifier",
-          "named": true
-        },
-        {
-          "type": "statement",
           "named": true
         }
       ]

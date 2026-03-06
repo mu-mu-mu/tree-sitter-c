@@ -6024,8 +6024,12 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "statement"
+          "type": "FIELD",
+          "name": "statement",
+          "content": {
+            "type": "SYMBOL",
+            "name": "statement"
+          }
         }
       ]
     },
